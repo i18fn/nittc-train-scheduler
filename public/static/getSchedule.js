@@ -1,6 +1,6 @@
 document.getElementById("search-button").onclick = function() {
-    var fromStation = document.getElementById("from-station").value;
-    var toStation   = document.getElementById("to-station").value;
+    var fromStation = document.getElementById("departure").value;
+    var toStation   = document.getElementById("arrive").value;
 
     alert("test");
 
