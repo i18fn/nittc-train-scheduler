@@ -2,16 +2,92 @@
 
 <html>
     <head>
+        <mata charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="static/style.css">
         <title>NITTC-TRAIN-SCHEDULER</title>
     </head>
     <body>
-        <h1>NITTC-TRAIN-SCHEDULER</h1>
+        <header>
+            <h1>徳山高専乗換案内</h1>
+        </header>
+        <main>
+            <h2>経路検索</h2>
+            <div>
+                <label>出発地点</label>
+                <select name="departure" id="departure" onchange="createMenu(this.value)">
+                    <option disabled selected>出発場所を選択してください</option>
+                    <option value="toku">徳山駅前</option>
+                    <option value="kusi">櫛ヶ浜駅前</option>
+                    <option value="sakasita">大学高専下</option>
+                    <option value="seimon">高専正門</option>
+                </select>
+                <label>到着地点</label>
+                <select name="arrive" id="arrive" disabled>
+                    <option disabled selected>到着場所を選んでください</option>
+                </select>
+            </div>
+            <div>
+                <form>
+                    <div class="nativeDatePicker">
+                      <label for="bday">出発日:</label>
+                      <input type="date" id="bday" name="bday">
+                      <span class="validity"></span>
+                    </div>
+                    <p class="fallbackLabel">出発日:</p>
+                    <div class="fallbackDatePicker">
+                      <span>
+                        <select id="year" name="year">
+                        </select>
+                        <label for="year">年</label>
+                      </span>
+                      <span>
+                        <select id="month" name="month">
+                          <option selected>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                        </select>
+                        <label for="month">月</label>
+                      </span>
+                      <span>
+                        <select id="day" name="day">
+                        </select>
+                        <label for="day">日</label>
+                      </span>
+                      <input type="time" name="time">
+                    </div>
+                </form>
+                <div>
+                    <label>時間:</label>
+                    <input type="time" name="time">
+                </div>
+                <button type="button">検索</button>
+            </div>
+            <h2>各交通機関の運行情報やお知らせ</h2>
+            <div>
+                <a>防長バスはこちら→</a>
+            <a href="https://www.bochobus.co.jp">
+                <button type="button">バス</button>
+            </a>
+            </div>
+            <div>
+                <a>JR西日本はこちら→</a>
+            <a href="https://trafficinfo.westjr.co.jp/chugoku.html">
+                <button type="button">JR</button>
+            </a>
+            </div>
+        </main>
 
-        <input type="text" id="from-station">から
-        <input type="text" id="to-station">まで
-
-        <button id="search-button">検索</button>
+        <script type="text/javascript" src="route.js"></script>
+        <script type="text/javascript" src="date.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
