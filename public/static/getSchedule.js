@@ -12,10 +12,12 @@ document.getElementById("search-button").onclick = function() {
     
     var database = firebase.database();
 
+    var data;
     database.ref("scheduler/bus/" + fromStation).on(
         "value", (snapshot) => {
-            const data = snapshot.val();
-            console.log(data);
+            data = snapshot.val();
         }
     )
+
+    document.getElementById("result").innerText = data;
 };
