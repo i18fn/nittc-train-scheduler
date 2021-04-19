@@ -3,7 +3,7 @@
 <html>
     <head>
         <mata charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
         <title>NITTC-TRAIN-SCHEDULER</title>
     </head>
     <body>
@@ -17,7 +17,7 @@
                 <select name="departure" id="departure" onchange="createMenu(this.value)">
                     <option disabled selected>出発場所を選択してください</option>
                     <option value="toku">徳山駅前</option>
-                    <option value="kusi">櫛ヶ浜駅前</option>
+                    <option value="kusi">櫛ケ浜駅前</option>
                     <option value="sakasita">大学高専下</option>
                     <option value="seimon">高専正門</option>
                 </select>
@@ -88,9 +88,6 @@
             </div>
         </main>
 
-        <script type="text/javascript" src="route.js"></script>
-        <script type="text/javascript" src="date.js"></script>
-
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
@@ -99,5 +96,8 @@
 
         <!-- DBから時刻データを取得する -->
         <script src="static/getSchedule.js"></script>
+
+        <script type="text/javascript" src="static/route.js"></script>
+        <script type="text/javascript" src="static/date.js"></script>
     </body>
 </html>
